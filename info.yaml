@@ -1,21 +1,49 @@
+# Tiny Tapeout project information
 project:
-  title: "Stochastic Computing ALU - Edge AI Optimized"
-  author: "tiberthyn"
-  description: |
-    Stochastic-computing ALU.
-    Implements multiplication (AND), averaged addition (MUX), and logic operations
-    using probabilistic data representation. Includes a confidence flag based on
-    online variance estimation for real-time quality monitoring.
-  language: "Verilog"
-  clock_hz: 25000000
-  top_module: "tt_um_stoch_alu"
+  title:        "Stochastic Computing ALU for Edge AI"      # Project title
+  author:       "Berthyn"  
+  discord:      "tiberthyn" 
+  description:  "8-bit ALU using stochastic computing for approximate multiplication/addition with real-time confidence flag" 
+  language:     "Verilog" 
+  clock_hz:     25000000 
+
+  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+
+  top_module:  "tt_um_berthyn_stoch_alu"
+
   source_files:
     - "verilog/rtl/user_proj.v"
-  pinout:
-    ui_in: "Operand A (8-bit binary)"
-    uio: "[3:0]=Operand B, [6:4]=Opcode, [7]=Mode(0:exact,1:stochastic)"
-    uo_out: "[6:0]=Result, [7]=Confidence Flag"
-    clk: "25 MHz system clock"
-    rst_n: "Active-low asynchronous reset"
-  test_mode: "Simulate with iverilog or use Demoboard. Stochastic mode requires 64 cycles per operation."
-  license: "CERN-OHL-S-2.0"
+
+pinout:
+  # Inputs
+  ui[0]: "Operand A bit 0"
+  ui[1]: "Operand A bit 1"
+  ui[2]: "Operand A bit 2"
+  ui[3]: "Operand A bit 3"
+  ui[4]: "Operand A bit 4"
+  ui[5]: "Operand A bit 5"
+  ui[6]: "Operand A bit 6"
+  ui[7]: "Operand A bit 7"
+
+  # Outputs
+  uo[0]: "Result bit 0"
+  uo[1]: "Result bit 1"
+  uo[2]: "Result bit 2"
+  uo[3]: "Result bit 3"
+  uo[4]: "Result bit 4"
+  uo[5]: "Result bit 5"
+  uo[6]: "Result bit 6"
+  uo[7]: "Confidence Flag"
+
+  # Bidirectional pins
+  uio[0]: "Operand B bit 0"
+  uio[1]: "Operand B bit 1"
+  uio[2]: "Operand B bit 2"
+  uio[3]: "Operand B bit 3"
+  uio[4]: "Opcode bit 0"
+  uio[5]: "Opcode bit 1"
+  uio[6]: "Opcode bit 2"
+  uio[7]: "Mode (0=exact, 1=stochastic)"
+
+# Do not change!
+yaml_version: 6
