@@ -1,9 +1,5 @@
 name: Tiny Tapeout CI
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,4 +7,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Tiny Tapeout Validation
-        uses: tinytapeout/tt-ci-action@v1
+        uses: TinyTapeout/tt-gds-action@tt6
