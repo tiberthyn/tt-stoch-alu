@@ -8,9 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Install Tiny Tapeout CI
-        run: pip install ttci
-      - name: Run validation
-        run: ttci
+      - name: Tiny Tapeout Validation
+        uses: tinytapeout/tt-ci-action@v1
