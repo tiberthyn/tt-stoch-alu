@@ -1,0 +1,7 @@
+*.vcd
+*.log
+sim
+runs/
+results/
+.DS_Store
+Thumbs.db
