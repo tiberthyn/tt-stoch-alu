@@ -1,0 +1,21 @@
+project:
+  title: "Stochastic Computing ALU - Edge AI Optimized"
+  author: "tiberthyn"
+  description: |
+    Primera ALU de computación estocástica fabricada vía Tiny Tapeout.
+    Implementa multiplicación (AND), suma promediada (MUX) y operaciones lógicas
+    usando representación probabilística de datos. Incluye flag de confianza
+    basado en varianza online para monitoreo de calidad en tiempo real.
+  language: "Verilog"
+  clock_hz: 25000000
+  top_module: "tt_um_stoch_alu"
+  source_files:
+    - "verilog/rtl/user_proj.v"
+  pinout:
+    ui_in: "Operand A (8-bit binary)"
+    uio: "[3:0]=Operand B, [6:4]=Opcode, [7]=Mode(0:exact,1:stochastic)"
+    uo_out: "[6:0]=Result, [7]=Confidence Flag"
+    clk: "25 MHz system clock"
+    rst_n: "Active-low asynchronous reset"
+  test_mode: "Simular con iverilog o usar Demoboard. Modo estocástico requiere 64 ciclos por operación."
+  license: "CERN-OHL-S-2.0"
