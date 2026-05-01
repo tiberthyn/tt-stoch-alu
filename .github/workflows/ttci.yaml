@@ -7,4 +7,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Tiny Tapeout Validation
-        uses: TinyTapeout/tt-gds-action@tt6
+        uses: TinyTapeout/tt-gds-action@tt10
