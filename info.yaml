@@ -11,8 +11,7 @@ project:
 
   top_module:  "tt_um_berthyn_stoch_alu"
 
-  source_files:
-    - "verilog/rtl/user_proj.v"
+  source_files: "verilog/rtl/user_proj.v"
 
 pinout:
   # Inputs
