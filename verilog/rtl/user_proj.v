@@ -1,10 +1,10 @@
 `default_nettype none
-module tt_um_stoch_alu (
-    input  wire [7:0] ui_in,
-    output reg  [7:0] uo_out,
-    inout  wire [7:0] uio,
-    input  wire       clk,
-    input  wire       rst_n
+module tt_um_berthyn_stoch_alu (
+  input wire [7:0] ui_in,
+  output reg [7:0] uo_out,
+  inout wire [7:0] uio,
+  input wire clk,
+  input wire rst_n
 );
 
     // Decodificación de pines
