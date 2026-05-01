@@ -1,7 +1,28 @@
-*.vcd
-*.log
-sim
+# Tiny Tapeout build artifacts
 runs/
 results/
+*.gds
+*.lef
+*.def
+*.oas
+*.mag
+*.gds.gz
+
+# Simulation outputs
+*.vcd
+*.fst
+*.log
+sim
+sim_build/
+*.pyc
+__pycache__/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
 .DS_Store
 Thumbs.db
